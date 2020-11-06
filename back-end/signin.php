@@ -26,6 +26,7 @@
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                 }
+                $_SESSION["username"] = $_POST["username"];
                 #echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
             } 
         }
@@ -35,6 +36,8 @@
         $conn->close();
     }
     $message = 'Hello, '.$_POST["username"].' your login time is '. date("h:i:sa");
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    header('location:../front-end/index.html');
+    echo "<script>
+    alert('".$message."');
+    window.location.href='../front-end/index.html';
+    </script>";
 ?>

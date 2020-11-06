@@ -23,6 +23,6 @@ if(isset($_POST["btn"])){
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
-    header('location:../front-end/index.html');
+    header('location:../front-end/signin.html');
 }
 ?>
